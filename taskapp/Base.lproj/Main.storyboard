@@ -138,7 +138,7 @@
                     <navigationItem key="navigationItem" id="PYr-J7-EeF"/>
                     <connections>
                         <outlet property="contentsTextView" destination="KvA-jf-pJC" id="lJy-fy-96Q"/>
-                        <outlet property="detePicker" destination="gfR-3h-X1g" id="MIq-K0-rkb"/>
+                        <outlet property="datePicker" destination="gfR-3h-X1g" id="Gcz-Do-pup"/>
                         <outlet property="titleTextField" destination="Mph-cH-yiU" id="uyR-kz-hMO"/>
                     </connections>
                 </viewController>
@@ -166,7 +166,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Naa-8s-XGW"/>
+        <segue reference="6by-Yn-DVs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
