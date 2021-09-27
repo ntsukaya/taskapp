@@ -61,7 +61,7 @@ class InputViewController: UIViewController {
         
         // ローカル通知が発動するtrigger（日付マッチ）を作成
         let calender = Calendar.current
-        let dateComponents = calender.dateComponents([.year , .month , .day , .minute ], from: task.date)
+        let dateComponents = calender.dateComponents([.year , .month , .day , .hour ,.minute ], from: task.date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
         // identifier, content, triggerからローカル通知を作成（identifierが同じだとローカル通知を上書き保存）
