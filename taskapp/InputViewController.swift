@@ -13,7 +13,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
+    @IBOutlet weak var categoryTextField: UITextField!
     
     let realm = try! Realm()
     var task: Task!
@@ -28,12 +28,13 @@ class InputViewController: UIViewController {
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
-        
+        categoryTextField.text = task.category
     }
     
     
     override func viewWillDisappear(_ animated: Bool) {
         try! realm.write {
+            self.task.category = self.categoryTextField.text!
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date

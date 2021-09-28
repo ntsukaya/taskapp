@@ -13,17 +13,17 @@ import UserNotifications
 class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterTextField: UITextField!
+    
+    
     
     //Realmインスタンス生成
     let realm = try!Realm()
-    
     // DB内のタスクが格納されるリスト。
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
+    
     var taskArray = try!Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -117,6 +117,8 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
+    
     
 }
 
