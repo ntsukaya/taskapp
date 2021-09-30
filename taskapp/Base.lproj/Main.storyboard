@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SvB-Tk-CEa">
-                                <rect key="frame" x="0.0" y="133" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="znk-PN-Nnl" detailTextLabel="Veo-aC-s8V" style="IBUITableViewCellStyleSubtitle" id="Q5P-UH-fk7">
@@ -46,26 +46,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocw-Gq-Dpn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="GgW-Un-A1h"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="g8B-zt-B8L"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DWi-aJ-rLb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7iE-HB-oWB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ocw-Gq-Dpn" secondAttribute="trailing" id="Plm-Kc-BTc"/>
-                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="top" secondItem="ocw-Gq-Dpn" secondAttribute="bottom" constant="5" id="UNd-ch-FSI"/>
-                            <constraint firstItem="ocw-Gq-Dpn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UjT-dD-6Ly"/>
-                            <constraint firstItem="ocw-Gq-Dpn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aff-iR-Hwl"/>
-                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pz3-Po-BkJ"/>
-                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sdR-rC-fHb"/>
+                            <constraint firstItem="DWi-aJ-rLb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="24I-Pz-WC3"/>
+                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4C0-HQ-jV4"/>
+                            <constraint firstItem="DWi-aJ-rLb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7iE-HB-oWB"/>
+                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="top" secondItem="DWi-aJ-rLb" secondAttribute="bottom" id="Dwf-P7-xTb"/>
+                            <constraint firstItem="DWi-aJ-rLb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ILe-Ay-rPF"/>
+                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XZN-pp-p4L"/>
+                            <constraint firstItem="SvB-Tk-CEa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="epY-JT-xG5"/>
+                            <constraint firstItem="DWi-aJ-rLb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yk0-2z-YVu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dHT-Ed-vBi">
@@ -76,7 +72,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="filterTextField" destination="ocw-Gq-Dpn" id="nKR-lD-vfS"/>
+                        <outlet property="searchBar" destination="DWi-aJ-rLb" id="2NU-rU-UKk"/>
                         <outlet property="tableView" destination="SvB-Tk-CEa" id="mvD-cH-IEI"/>
                         <segue destination="IaP-Fq-3Y8" kind="show" identifier="cellSegue" id="Naa-8s-XGW"/>
                     </connections>

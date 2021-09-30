@@ -10,11 +10,11 @@ import RealmSwift
 import UserNotifications
 
 
-class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterTextField: UITextField!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     //Realmインスタンス生成
@@ -22,15 +22,39 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     // DB内のタスクが格納されるリスト。
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
-    
     var taskArray = try!Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.placeholder = "カテゴリを入力"
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
+        searchBar.delegate = self
         // Do any additional setup after loading the view.
+    }
+    func searchBar(_ searchBar: UISearchBar,textDidChange searchText: String) {
+        if searchText.isEmpty {
+            taskArray = try!Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+            tableView.reloadData()
+        }
+        
+    }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        if let word = searchBar.text{
+            if word == "" {
+                taskArray = try!Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+            } else {
+                let predicate = NSPredicate(format: "category == %@", word)
+                taskArray = try!Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true).filter(predicate)
+            }
+        }
+        tableView.reloadData()
     }
     
     
