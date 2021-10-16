@@ -21,7 +21,7 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
+        // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する　テスト2
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
         
